@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/javascript; charset=iso-8859-1" />
+	<title>CONFOLD</title>
+	<style>
+		body{
+			font-family:  verdana;
+		}
+		table{
+			font-size : 85%;
+			box-shadow: 1px 1px 1px #999;
+		}
+		p{
+			line-height: 1.5;
+		}
+	</style>
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-59138810-4', 'auto');
+		ga('send', 'pageview');
+		function clearForm(){
+			document.getElementById("email").value            = "";
+			document.getElementById("id").value               = "";
+			document.getElementById("protein_sequence").value = "";
+			document.getElementById("protein_sec").value      = "";
+			document.getElementById("rr").value               = "";
+			document.getElementById("rr_subset").value        = "all";
+			document.getElementById("rr_type").value          = "cb";
+			document.getElementById("lambda").value           = "0.5";
+			document.getElementById("stage2").value           = "1";
+			document.getElementById("sheet_threshold").value  = "7.0";
+			document.getElementById("con_wt").value           = "10";
+			document.getElementById("sec_wt").value           = "1";
+			document.getElementById("atom_scheme").value      = "2";
+			document.getElementById("rep2").value             = "0.8";
+			document.getElementById("pairing").value          = "";
+		}
+		function validateForm() {
+			var x = document.forms["mainform"]["email"].value;
+			if (x == null || x == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+		}
+		function fillExample1(){
+			document.getElementById("email").value            = "";
+			document.getElementById("id").value               = "short";
+			document.getElementById("protein_sequence").value = "GFGCNGPWDEDDCNGPWDEDD";
+			document.getElementById("protein_sec").value      = "CHHHHHHCCCEEEECCEEEEC";
+			document.getElementById("rr").value               = "1 12 0 8 1.0";
+			document.getElementById("rr_subset").value        = "all";
+			document.getElementById("rr_type").value          = "cb";
+			document.getElementById("lambda").value           = "1.0";
+			document.getElementById("stage2").value           = "2";
+			document.getElementById("sheet_threshold").value  = "7.0";
+			document.getElementById("con_wt").value           = "10";
+			document.getElementById("sec_wt").value           = "1";
+			document.getElementById("atom_scheme").value      = "6";
+			document.getElementById("rep2").value             = "0.8";
+			document.getElementById("pairing").value          = "10 13 19 16 A 1.0";
+		}
+		function fillExample2(){
+			document.getElementById("email").value            = "";
+			document.getElementById("id").value               = "3E7U";
+			document.getElementById("protein_sequence").value = "GFGCNGPWDEDDMQCHNHCKSIKGYKGGYCAKGGFVCKCY";
+			document.getElementById("protein_sec").value      = "CCCCCCCCCCHHHHHHHHHCCCCCCCEEEEECCCCEEEEE";
+			document.getElementById("rr").value               = "1 15 0 8 7.582\n1 35 0 8 7.469\n1 36 0 8 7.524\n1 37 0 8 5.381\n10 30 0 8 4.794\n10 33 0 8 7.800\n10 34 0 8 4.579\n11 30 0 8 7.345\n12 28 0 8 7.518\n12 29 0 8 4.811\n12 30 0 8 5.178\n15 28 0 8 5.423\n15 29 0 8 5.944\n15 30 0 8 5.459\n15 37 0 8 3.944\n15 38 0 8 7.532\n16 27 0 8 5.172\n16 28 0 8 4.636\n16 29 0 8 6.219\n18 28 0 8 7.766\n18 37 0 8 6.338\n18 39 0 8 7.778\n19 25 0 8 4.659\n19 26 0 8 7.787\n19 27 0 8 4.319\n19 28 0 8 3.983\n19 37 0 8 6.889\n19 38 0 8 7.942\n19 39 0 8 3.603\n19 40 0 8 7.375\n2 14 0 8 6.011\n2 15 0 8 4.825\n2 18 0 8 4.289\n2 19 0 8 7.809\n2 37 0 8 3.947\n20 26 0 8 7.181\n20 27 0 8 5.053\n20 28 0 8 7.516\n22 39 0 8 6.459\n25 39 0 8 4.357\n25 40 0 8 6.515\n26 40 0 8 5.934\n27 39 0 8 6.060\n27 40 0 8 5.808\n28 37 0 8 6.801\n28 38 0 8 5.845\n28 39 0 8 4.975\n28 40 0 8 5.775\n29 37 0 8 7.732\n29 38 0 8 5.902\n3 10 0 8 7.436\n3 11 0 8 3.916\n3 12 0 8 7.998\n3 14 0 8 4.151\n3 15 0 8 5.445\n3 18 0 8 7.903\n3 30 0 8 7.042\n3 37 0 8 6.579\n3 9 0 8 7.247\n30 36 0 8 6.745\n30 37 0 8 6.197\n30 38 0 8 7.110\n31 37 0 8 7.558\n31 38 0 8 3.933\n32 38 0 8 7.663\n4 10 0 8 6.129\n4 11 0 8 6.943\n4 12 0 8 7.678\n4 14 0 8 7.933\n4 15 0 8 5.274\n4 30 0 8 3.737\n4 31 0 8 7.382\n4 34 0 8 5.081\n4 35 0 8 5.866\n4 36 0 8 5.778\n4 37 0 8 4.487\n5 11 0 8 7.248\n5 34 0 8 7.460\n5 35 0 8 7.157\n6 30 0 8 7.351\n6 33 0 8 6.094\n6 34 0 8 4.088\n6 35 0 8 4.830\n7 33 0 8 5.432\n7 34 0 8 5.393\n";
+			document.getElementById("rr_subset").value        = "all";
+			document.getElementById("rr_type").value          = "cb";
+			document.getElementById("lambda").value           = "1.0";
+			document.getElementById("stage2").value           = "1";
+			document.getElementById("sheet_threshold").value  = "7.0";
+			document.getElementById("con_wt").value           = "10";
+			document.getElementById("sec_wt").value           = "1";
+			document.getElementById("atom_scheme").value      = "2";
+			document.getElementById("rep2").value             = "0.8";
+			document.getElementById("pairing").value          = "27 31 40 36 A 1.0";
+		}
+		function fillExample3(){
+			document.getElementById("email").value            = "";
+			document.getElementById("id").value               = "BPT1_BOVIN";
+			document.getElementById("protein_sequence").value = "AQRPDFCLEPPYTGPCKARIIRYFYNAKAGLCQTFVYGGCRAKRNNFKSAEDCMRTCGGAIGP";
+			document.getElementById("protein_sec").value      = "CCCCCCCCCCCCCCCCCCCEEEEEEECCCCCEEEEEECCCCCCCCCCCCHHHHHHHCCCCCCC";
+			document.getElementById("rr").value               = "40 16 0 7 0.64908\n53 32 0 7 0.35606\n46 22 0 7 0.27714\n33 26 0 7 0.21533\n57 7 0 7 0.19638\n35 14 0 7 0.13875\n48 22 0 7 0.13439\n47 7 0 7 0.13196\n38 15 0 7 0.11792\n38 18 0 7 0.10622\n42 35 0 7 0.10204\n42 14 0 7 0.099122\n43 35 0 7 0.097439\n24 11 0 7 0.095366\n36 19 0 7 0.094903\n39 14 0 7 0.094663\n44 9 0 7 0.094142\n45 7 0 7 0.090681\n38 17 0 7 0.084781\n46 14 0 7 0.082116\n43 37 0 7 0.081445\n38 19 0 7 0.08036\n33 24 0 7 0.076129\n25 7 0 7 0.071096\n43 14 0 7 0.068114\n35 22 0 7 0.066734\n36 21 0 7 0.066566\n36 18 0 7 0.065414\n47 9 0 7 0.064113\n41 15 0 7 0.06411\n43 9 0 7 0.063994\n45 23 0 7 0.06397\n36 20 0 7 0.063811\n46 37 0 7 0.063737\n38 20 0 7 0.063594\n19 13 0 7 0.060539\n39 16 0 7 0.059647\n46 35 0 7 0.057923\n50 23 0 7 0.056684\n27 8 0 7 0.056234\n46 11 0 7 0.055675\n58 30 0 7 0.055669\n56 6 0 7 0.055347\n38 13 0 7 0.05438\n27 9 0 7 0.054297\n36 17 0 7 0.053419\n44 6 0 7 0.053289\n34 19 0 7 0.05314\n56 33 0 7 0.052646\n17 8 0 7 0.051813\n33 21 0 7 0.051626\n42 12 0 7 0.050952\n16 6 0 7 0.050783";
+			document.getElementById("rr_subset").value        = "0.4";
+			document.getElementById("rr_type").value          = "ca";
+			document.getElementById("lambda").value           = "0.5";
+			document.getElementById("stage2").value           = "4";
+			document.getElementById("sheet_threshold").value  = "7.0";
+			document.getElementById("con_wt").value           = "10";
+			document.getElementById("sec_wt").value           = "0.5";
+			document.getElementById("atom_scheme").value      = "2";
+			document.getElementById("rep2").value             = "0.8";
+			document.getElementById("pairing").value          = "";
+		}
+		function toggle_it(itemID){ 
+			// Toggle visibility between none and '' 
+			if ((document.getElementById(itemID).style.display == 'none')) { 
+				document.getElementById(itemID).style.display = '' 
+				event.preventDefault()
+			}else{ 
+				document.getElementById(itemID).style.display = 'none'; 
+				event.preventDefault()
+			}    
+		} 
+	</script>
+</head>
+
+<body>
+	<div align="center"><img src="http://protein.rnet.missouri.edu/confold/header.png" width="1000" align="middle" alt="header"/>
+		</br>
+		<ul>
+            <li style="display: inline; margin-right: 10px;"><a href="http://protein.rnet.missouri.edu/confold/index.php">Submit a Job</a></li>
+             <li style="display: inline; margin-right: 10px;"><a href="http://protein.rnet.missouri.edu/confold/tool.php">Download</a></li>
+		  <li style="display: inline; margin-right: 10px;"><a href="http://protein.rnet.missouri.edu/confold/about.php">About</a></li>
+		  <li style="display: inline; margin-right: 10px;"><a href="http://protein.rnet.missouri.edu/confold/help.php">Help</a></li>
+		</ul>
+	</div>
+	<table id="main" frame="box" width="1000" cellspacing="5" cellpadding="3" border="0" rules="none" align="center">
