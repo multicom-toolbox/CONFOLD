@@ -4,7 +4,7 @@
 <td>
 	<p>
 	<b>Download:</b></br>
-    Please download CONFOLD from our MULTICOM toolbox server <a href="http://sysbio.rnet.missouri.edu/multicom_toolbox/tools.html">here</a>.</br>
+    Please find CONFOLD at our lab's <a href="https://github.com/multicom-toolbox/CONFOLD">GITHUB repo</a>.</br>
     </br>
     <b>Tips:</b></br>
     Before using predicted contacts to build contacts, we suggest that the contacts be assessed/analysed using a contact assessment tool like CONASSESS accessible at <a href="http://sysbio.rnet.missouri.edu/conassess/">http://sysbio.rnet.missouri.edu/conassess/</a>. 
