@@ -38,9 +38,7 @@ Installation
         For instance, if your CNS installation path is
         '/home/user/programs/cns_solve_1.3' replace
         '_CNSsolve_location_' with this path
-   2.6. Install
-        $ make install
-   2.7. Test CNS installation
+   2.6. Test CNS installation
         $ source cns_solve_env.sh
         $ cd test 
         $ ../bin/run_tests -tidy *.inp
