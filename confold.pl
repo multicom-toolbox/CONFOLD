@@ -1463,7 +1463,7 @@ sub count_ss_match{
 	confess "ERROR! file pdb $file_pdb does not exist!" if not -f $file_pdb;
 	confess "ERROR! file sec $file_sec does not exist!" if not -f $file_sec;
 	confess "Invalid character!" if not ($char eq "H" or $char eq "E" or $char eq "C");
-	my %residue_ss1 = fasta2residues_hash($file_fasta);
+	my %residue_ss1 = fasta2residues_hash($file_sec);
 	my %residue_ss2 = dssp_result($file_pdb, "ss");
 	my $count = 0;
 	foreach my $r (keys %residue_ss1){
