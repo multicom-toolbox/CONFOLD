@@ -2239,8 +2239,6 @@ sub assess_dgsa{
 		$c2 = clash_count($pdb, 3.5);
 		$h  = count_ss_match($pdb, $file_ss, "H") if $file_ss;
 		$e  = count_ss_match($pdb, $file_ss, "E") if $file_ss;
-        print "\n".$h." ".$e."\n";
-        exit;
 		$n1 = count_satisfied_tbl_rows($pdb, "contact.tbl", "noe") if defined $tbl_list{"contact.tbl"};
 		$n2 = count_satisfied_tbl_rows($pdb, "ssnoe.tbl", "noe")   if defined $tbl_list{"ssnoe.tbl"};
 		$n3 = count_satisfied_tbl_rows($pdb, "hbond.tbl", "noe")   if defined $tbl_list{"hbond.tbl"};
